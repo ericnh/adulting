@@ -1,10 +1,20 @@
 <h1>Adulting Card Game</h1>
-<p>Adulting is the card game about adultness.</p>
-<p>This webapp is for the development of this game. The webapp will have these features:</p>
-<ul>
-  <li>User authentication</li>
-  <li>Card crud</li>
-  <li>Rulebook crud</li>
-</ul>
-
+<% if user_signed_in? %>
+  <p>This webapp has these features:</p>
+  <ul>
+    <li>An up to date <%= link_to 'Rulebook', rulebook_path %></li>
+    <li>User authentication</li>
+  </ul>
+  <p>This webapp will have these features:</p>
+  <ul>
+    <li>A list of current cards</li>
+    <li>A form to create cards</li>
+    <li>An ability to edit cards you have created</li>
+    <li>A way to comment on cards</li>
+    <li>An interface for admins to edit the rulebook</li>
+    <li>Better flash messages</li>
+  </ul>
+<% else %>
+  <p>Hey there! <%= link_to "Sign In", new_user_session_path %> or <%= link_to "Create An Account" %> to see the rulebook</p>
+<% end %>
 
