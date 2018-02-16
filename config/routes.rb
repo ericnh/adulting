@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
   # devise might handle all we need here
-  # resources :users
+  resources :users, only: [:show, :index, :edit, :update]
   
   authenticated :user do
     root 'rulebook#index'
