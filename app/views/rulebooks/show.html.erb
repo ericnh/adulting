@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Major version:</strong>
+  <%= @rulebook.major_version %>
+</p>
+
+<p>
+  <strong>Minor version:</strong>
+  <%= @rulebook.minor_version %>
+</p>
+
+<p>
+  <strong>Markdown text:</strong>
+  <%= @rulebook.markdown_text %>
+</p>
+
+<%= link_to 'Edit', edit_rulebook_path(@rulebook) %> |
+<%= link_to 'Back', rulebooks_path %>

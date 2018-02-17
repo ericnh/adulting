@@ -1,0 +1,32 @@
+<%= form_for(rulebook) do |f| %>
+  <% if rulebook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rulebook.errors.count, "error") %> prohibited this rulebook from being saved:</h2>
+
+      <ul>
+      <% rulebook.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :major_version %>
+    <%= f.number_field :major_version %>
+  </div>
+
+  <div class="field">
+    <%= f.label :minor_version %>
+    <%= f.number_field :minor_version %>
+  </div>
+
+  <div class="field">
+    <%= f.label :markdown_text %>
+    <%= f.text_area :markdown_text %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

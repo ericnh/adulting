@@ -1,0 +1,7 @@
+<h1>Rulebook</h1>
+<h3>Version <%= @rulebook.major_version %>.<%= @rulebook.minor_version %></h3>
+<%== @markdown_text %>
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_rulebook_path(@rulebook) %>
+<% end %>
+

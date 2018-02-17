@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  major_version: 1
+  minor_version: 1
+  markdown_text: MyText
+
+two:
+  major_version: 1
+  minor_version: 1
+  markdown_text: MyText

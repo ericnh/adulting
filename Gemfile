@@ -40,6 +40,8 @@ gem 'devise'
 
 # Use markdown for the rulebook
 gem 'markdown-rails'
+gem 'redcarpet'
+# gem 'md_simple_editor'
 
 # Bootstrap for the win
 gem 'bootstrap', '~> 4.0.0.alpha6'
