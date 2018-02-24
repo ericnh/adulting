@@ -1,3 +1,10 @@
 // Place all the styles related to the rulebooks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.page-header {
+  text-align: center;
+  color: #7c7d84;
+  small {
+    color: #a1a3af;
+  }
+}
