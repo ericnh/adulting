@@ -39,9 +39,12 @@ gem 'devise'
 # gem 'capistrano-rails', group: :development
 
 # Use markdown for the rulebook
+## This one is used to render the markdown into html
 gem 'markdown-rails'
+### markdown-rails told me to download redcarpet
 gem 'redcarpet'
-# gem 'md_simple_editor'
+## markdown editor that github uses
+gem 'gollum_editor'
 
 # Bootstrap for the win
 gem 'bootstrap', '~> 4.0.0.alpha6'

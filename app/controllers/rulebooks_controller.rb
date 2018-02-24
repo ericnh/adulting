@@ -15,7 +15,12 @@ class RulebooksController < ApplicationController
 
   def current
     @rulebook = Rulebook.last
-    @markdown_text = Markdown.new(@rulebook.markdown_text).to_html
+    if @rulebook
+      @markdown_text = Markdown.new(@rulebook.markdown_text).to_html
+    else
+      @rulebook = Rulebook.new
+      @markdown_text = "<p>There was a problem fetching the latest rulebook</p>"
+    end
   end
 
   # GET /rulebooks/new

@@ -69,6 +69,7 @@ GEM
     ffi (1.9.21)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    gollum_editor (0.6)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -188,6 +189,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
+  gollum_editor
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
@@ -205,4 +207,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.0.pre.2
+   1.16.1

@@ -1,3 +1,6 @@
+<%= stylesheet_link_tag "gollum_editor/gollum" %>
+<%= javascript_include_tag "gollum_editor/gollum" %>
+
 <%= form_for(rulebook) do |f| %>
   <% if rulebook.errors.any? %>
     <div id="error_explanation">
@@ -23,7 +26,7 @@
 
   <div class="field">
     <%= f.label :markdown_text %>
-    <%= f.text_area :markdown_text %>
+    <%= f.gollum_editor :markdown_text %>
   </div>
 
   <div class="actions">
