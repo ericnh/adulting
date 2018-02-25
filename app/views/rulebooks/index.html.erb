@@ -2,12 +2,12 @@
 
 <h1>Rulebooks</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Major version</th>
-      <th>Minor version</th>
-      <th>Markdown text</th>
+      <th>Version</th>
+      <th>Character Count</th>
+      <th>Last Updated At</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +15,9 @@
   <tbody>
     <% @rulebooks.each do |rulebook| %>
       <tr>
-        <td><%= rulebook.major_version %></td>
-        <td><%= rulebook.minor_version %></td>
-        <td><%= rulebook.markdown_text %></td>
+        <td><%= rulebook.id %></td>
+        <td><%= rulebook.markdown_text.length %></td>
+        <td><%= rulebook.updated_at.strftime("%F") %></td>
         <td><%= link_to 'Show', rulebook %></td>
         <td><%= link_to 'Edit', edit_rulebook_path(rulebook) %></td>
         <td><%= link_to 'Destroy', rulebook, method: :delete, data: { confirm: 'Are you sure?' } %></td>

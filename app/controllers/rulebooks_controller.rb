@@ -1,16 +1,17 @@
 class RulebooksController < ApplicationController
-  before_action :set_rulebook, only: [:show, :edit, :update, :destroy]
+  before_action :set_rulebook, only: [:show, :update, :destroy]
   before_action :authenticate_user!, except: [:current]
 
   # GET /rulebooks
   # GET /rulebooks.json
   def index
-    @rulebooks = Rulebook.all
+    @rulebooks = Rulebook.all.order(id: :desc)
   end
 
   # GET /rulebooks/1
   # GET /rulebooks/1.json
   def show
+    @markdown_text = Markdown.new(@rulebook.markdown_text).to_html
   end
 
   def current
@@ -21,6 +22,7 @@ class RulebooksController < ApplicationController
       @rulebook = Rulebook.new
       @markdown_text = "<p>There was a problem fetching the latest rulebook</p>"
     end
+      render "show"
   end
 
   # GET /rulebooks/new
@@ -30,6 +32,7 @@ class RulebooksController < ApplicationController
 
   # GET /rulebooks/1/edit
   def edit
+    @rulebook = Rulebook.find(params[:id])
   end
 
   # POST /rulebooks
@@ -52,7 +55,10 @@ class RulebooksController < ApplicationController
   # PATCH/PUT /rulebooks/1.json
   def update
     respond_to do |format|
-      if @rulebook.update(rulebook_params)
+      if params[:id].to_i == Rulebook.last.try(:id)
+        @rulebook = Rulebook.new
+      end
+      if @rulebook.update(rulebook_params.except(:id))
         format.html { redirect_to @rulebook, notice: 'Rulebook was successfully updated.' }
         format.json { render :show, status: :ok, location: @rulebook }
       else

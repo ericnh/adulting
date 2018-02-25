@@ -1,19 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h1 class="page-header">
+  Rulebook
+  <% if user_signed_in? %>
+    <a class="btn btn-default pull-right" href="<%= edit_rulebook_path(@rulebook) %>">Edit</a>
+  <% end %>
+</h1>
+<%== @markdown_text %>
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_rulebook_path(@rulebook) %>
+<% end %>
 
-<p>
-  <strong>Major version:</strong>
-  <%= @rulebook.major_version %>
-</p>
-
-<p>
-  <strong>Minor version:</strong>
-  <%= @rulebook.minor_version %>
-</p>
-
-<p>
-  <strong>Markdown text:</strong>
-  <%= @rulebook.markdown_text %>
-</p>
-
-<%= link_to 'Edit', edit_rulebook_path(@rulebook) %> |
-<%= link_to 'Back', rulebooks_path %>

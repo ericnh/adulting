@@ -15,17 +15,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :major_version %>
-    <%= f.number_field :major_version %>
-  </div>
-
-  <div class="field">
-    <%= f.label :minor_version %>
-    <%= f.number_field :minor_version %>
-  </div>
-
-  <div class="field">
-    <%= f.label :markdown_text %>
     <%= f.gollum_editor :markdown_text %>
   </div>
 
