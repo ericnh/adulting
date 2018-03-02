@@ -1,6 +1,7 @@
 class RulebooksController < ApplicationController
   before_action :set_rulebook, only: [:show, :update, :destroy]
   before_action :authenticate_user!, except: [:current]
+  before_action :authenticate_user_is_admin!, only: [:index, :edit, :update, :destroy]
 
   # GET /rulebooks
   # GET /rulebooks.json
