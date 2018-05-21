@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20180519171603) do
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.text     "name"
     t.text     "job_text"
     t.text     "job_subtext"
     t.integer  "job_type_id"
@@ -29,7 +28,6 @@ ActiveRecord::Schema.define(version: 20180519171603) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.index ["job_type_id"], name: "index_cards_on_job_type_id", using: :btree
-    t.index ["name"], name: "index_cards_on_name", unique: true, using: :btree
     t.index ["primary_suit_id"], name: "index_cards_on_primary_suit_id", using: :btree
     t.index ["secondary_suit_id"], name: "index_cards_on_secondary_suit_id", using: :btree
   end

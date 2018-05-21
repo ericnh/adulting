@@ -11,6 +11,30 @@
     </div>
   <% end %>
 
+  <div class="field form-group">
+    <%= f.label :job_text, "Job Text" %>
+    <i class="helper-text">(how this card distributes monies)</i>
+    <%= f.text_area :job_text, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :job_subtext, "Job Subtext" %>
+    <i class="helper-text">(information for the dealer that they do not read out loud)</i>
+    <%= f.text_area :job_subtext, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :sorting_text, "Sorting Text" %>
+    <i class="helper-text">(true or false type question that determines who gets to bid on the card)</i>
+    <%= f.text_area :sorting_text, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :sorting_subtext, "Sorting Subtext" %>
+    <i class="helper-text">(information for the dealer that they do not read out loud)</i>
+    <%= f.text_area :sorting_subtext, class: "form-control" %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
