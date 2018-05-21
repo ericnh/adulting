@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180304005258) do
+ActiveRecord::Schema.define(version: 20180519171603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cards", force: :cascade do |t|
+    t.text     "name"
+    t.text     "job_text"
+    t.text     "job_subtext"
+    t.integer  "job_type_id"
+    t.text     "sorting_text"
+    t.text     "sorting_subtext"
+    t.integer  "primary_suit_id"
+    t.integer  "secondary_suit_id"
+    t.text     "effect_name"
+    t.text     "effect_text"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["job_type_id"], name: "index_cards_on_job_type_id", using: :btree
+    t.index ["name"], name: "index_cards_on_name", unique: true, using: :btree
+    t.index ["primary_suit_id"], name: "index_cards_on_primary_suit_id", using: :btree
+    t.index ["secondary_suit_id"], name: "index_cards_on_secondary_suit_id", using: :btree
+  end
 
   create_table "rulebooks", force: :cascade do |t|
     t.text     "markdown_text"
