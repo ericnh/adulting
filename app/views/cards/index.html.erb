@@ -2,9 +2,12 @@
 
 <h1>Cards</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
+      <th>ID</th>
+      <th>Job Text</th>
+      <th>Sorting Text</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +15,9 @@
   <tbody>
     <% @cards.each do |card| %>
       <tr>
+        <td><%= card.id %></td>
+        <td><%= card.job_text %></td>
+        <td><%= card.sorting_text %></td>
         <td><%= link_to 'Show', card %></td>
         <td><%= link_to 'Edit', edit_card_path(card) %></td>
         <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
